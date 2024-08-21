@@ -96,7 +96,7 @@ def get_amazon_data_books(num_books, ti):
 #3) create and store data in table on postgres (load)
     
 def insert_book_data_into_postgres(ti):
-    book_data = ti.xcom_pull(key='book_data', task_ids='fetch_book_data')
+    book_data = ti.xcom_pull(key='book_data', task_ids='Extract_books_data')
     if not book_data:
         raise ValueError("No book data found")
 
@@ -128,8 +128,8 @@ dag = DAG(
 #hooks - allows connection to postgres
 
 
-fetch_book_data_task = PythonOperator(
-    task_id='fetch_book_data',
+Extract_books_data_task = PythonOperator(
+    task_id='Extract_books_data',
     python_callable=get_amazon_data_books,
     op_args=[100],  # Number of books to fetch
     dag=dag,
@@ -150,7 +150,7 @@ create_table_task = PostgresOperator(
     dag=dag,
 )
 
-insert_book_data_task = PythonOperator(
+Loading_data_postgres_task = PythonOperator(
     task_id='insert_book_data',
     python_callable=insert_book_data_into_postgres,
     dag=dag,
@@ -158,4 +158,4 @@ insert_book_data_task = PythonOperator(
 
 #dependencies
 
-fetch_book_data_task >> create_table_task >> insert_book_data_task
+Extract_books_data_task >> create_table_task >> Loading_data_postgres_task

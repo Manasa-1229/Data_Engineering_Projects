@@ -1,0 +1,628 @@
+[2024-08-20T04:46:21.386+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-08-20T04:46:21.413+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_and_store_DE_books.insert_book_data scheduled__2024-08-05T00:00:00+00:00 [queued]>
+[2024-08-20T04:46:21.425+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_and_store_DE_books.insert_book_data scheduled__2024-08-05T00:00:00+00:00 [queued]>
+[2024-08-20T04:46:21.426+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-08-20T04:46:21.444+0000] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): insert_book_data> on 2024-08-05 00:00:00+00:00
+[2024-08-20T04:46:21.455+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1213) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-20T04:46:21.458+0000] {standard_task_runner.py:72} INFO - Started process 1218 to run task
+[2024-08-20T04:46:21.459+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'fetch_and_store_DE_books', 'insert_book_data', 'scheduled__2024-08-05T00:00:00+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpwv0e52ku']
+[2024-08-20T04:46:21.460+0000] {standard_task_runner.py:105} INFO - Job 114: Subtask insert_book_data
+[2024-08-20T04:46:21.529+0000] {task_command.py:467} INFO - Running <TaskInstance: fetch_and_store_DE_books.insert_book_data scheduled__2024-08-05T00:00:00+00:00 [running]> on host 668944ed7238
+[2024-08-20T04:46:21.669+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_and_store_DE_books' AIRFLOW_CTX_TASK_ID='insert_book_data' AIRFLOW_CTX_EXECUTION_DATE='2024-08-05T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-08-05T00:00:00+00:00'
+[2024-08-20T04:46:21.673+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-08-20T04:46:21.674+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-08-20T04:46:21.675+0000] {logging_mixin.py:190} INFO - Current task name:insert_book_data state:running start_date:2024-08-20 04:46:21.414107+00:00
+[2024-08-20T04:46:21.675+0000] {logging_mixin.py:190} INFO - Dag name:fetch_and_store_DE_books and current dag run status:running
+[2024-08-20T04:46:21.676+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-08-20T04:46:21.707+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.713+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Ace the Data Engineering Interview: Questions and Answers for Python, SQL, Data Modeling and More', 'Sean Coyne', '24.', '4.1 out of 5 stars')
+[2024-08-20T04:46:21.715+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.727+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.733+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with AWS - Second Edition: Acquire the skills to design and build AWS-based data transformation pipelines like a pro', 'Gareth Eagar', '41.', '4.4 out of 5 stars')
+[2024-08-20T04:46:21.740+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.751+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.758+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Databricks Cookbook: Build effective data and AI solutions using Apache Spark, Databricks, and Delta Lake', 'Pulkit Chadha', '42.', '4.2 out of 5 stars')
+[2024-08-20T04:46:21.761+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.772+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.778+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Azure Data Engineer Associate Certification Guide: Ace the DP-203 exam with advanced data engineering skills', 'Giacinto Palmieri', '39.', '4.5 out of 5 stars')
+[2024-08-20T04:46:21.781+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.797+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.803+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Fundamentals of Data Engineering: Plan and Build Robust Data Systems', 'Joe Reis', '38.', '4.7 out of 5 stars')
+[2024-08-20T04:46:21.807+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.827+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.836+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Pipelines Pocket Reference: Moving and Processing Data for Analytics', 'James Densmore', '17.', '4.5 out of 5 stars')
+[2024-08-20T04:46:21.841+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.859+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.866+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems', 'Martin Kleppmann', '35.', '4.8 out of 5 stars')
+[2024-08-20T04:46:21.870+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.886+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.896+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Analysis with Python and PySpark', 'Jonathan Rioux', '55.', '4.4 out of 5 stars')
+[2024-08-20T04:46:21.900+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.914+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.922+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Azure Data Factory Cookbook - Second Edition: A data engineer's guide to building and managing ETL and ELT pipelines with data integration", 'Dmitry Foshin', '51.', '4.4 out of 5 stars')
+[2024-08-20T04:46:21.930+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.944+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.962+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with dbt: A practical guide to building a cloud-based, pragmatic, and dependable data platform with SQL', 'Roberto Zagni', '37.', '4.6 out of 5 stars')
+[2024-08-20T04:46:21.966+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:21.978+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:21.985+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Python: Work with massive datasets to design data models and automate data pipelines using Python', 'Paul Crickard', '37.', '4.1 out of 5 stars')
+[2024-08-20T04:46:21.989+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.004+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.010+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Python cookbook: Learn to build efficient data pipelines using the Modern Cloud Data Stack', 'Adithyan Ramanujakootam', '29.', '5.0 out of 5 stars')
+[2024-08-20T04:46:22.015+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.026+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.031+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Cracking the Data Engineering Interview: Land your dream job with the help of resume-building tips, over 100 mock questions, and a unique portfolio', 'Kedeisha Bryan', '26.', '4.4 out of 5 stars')
+[2024-08-20T04:46:22.034+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.047+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.053+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with AWS: Learn how to design and build cloud-based data transformation pipelines using AWS', 'Gareth Eagar', '49.', '4.4 out of 5 stars')
+[2024-08-20T04:46:22.056+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.069+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.075+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Driving Data Quality with Data Contracts: A comprehensive guide to building reliable, trusted, and effective data platforms', 'Andrew Jones', '28.', '4.6 out of 5 stars')
+[2024-08-20T04:46:22.077+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.091+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.097+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Software Engineering for Data Scientists: From Notebooks to Scalable Systems', 'Catherine Nelson', '52.', '4.5 out of 5 stars')
+[2024-08-20T04:46:22.099+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.113+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.120+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Google Cloud Platform: A guide to leveling up as a data engineer by building a scalable data platform with Google Cloud', 'Adi Wijaya', '41.', '5.0 out of 5 stars')
+[2024-08-20T04:46:22.125+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.148+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.157+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Mastering Large Datasets with Python: Parallelize and Distribute Your Python Code', 'John T. Wolohan', '49.', '3.9 out of 5 stars')
+[2024-08-20T04:46:22.159+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.174+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.179+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Expert Data Modeling with Power BI - Second Edition: Enrich and optimize your data models to get the best out of Power BI for reporting and business needs', 'Soheil Bakhshi', '47.', '4.8 out of 5 stars')
+[2024-08-20T04:46:22.180+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.196+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.201+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Build a Career in Data Science', 'Emily Robinson', '35.', '4.6 out of 5 stars')
+[2024-08-20T04:46:22.205+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.219+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.227+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control', 'Steven L. Brunton', '64.', '4.7 out of 5 stars')
+[2024-08-20T04:46:22.230+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.247+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.254+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('DATA ENGINEERING AND AI FOR BEGINNERS: Revolutionizing Data Processing and Analytics by Leveraging Artificial Intelligence for Efficient Input Collection, Storage, and Transformation (World of AI)', 'Paperback', '13.', '4.4 out of 5 stars')
+[2024-08-20T04:46:22.256+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.280+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.290+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Modeling with Snowflake: A practical guide to accelerating Snowflake development using universal data modeling techniques', 'Serge Gershkovich', '36.', '4.8 out of 5 stars')
+[2024-08-20T04:46:22.292+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.309+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.316+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Mesh: Delivering Data-Driven Value at Scale', 'Zhamak Dehghani', '43.', '4.5 out of 5 stars')
+[2024-08-20T04:46:22.318+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.337+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.343+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Apache Spark, Delta Lake, and Lakehouse: Create scalable pipelines that ingest, curate, and aggregate complex data in a timely and secure way', 'Manoj Kukreja', '29.', '3.9 out of 5 stars')
+[2024-08-20T04:46:22.346+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.360+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.366+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Machine Learning Engineering', 'Andriy Burkov', '39.', '4.7 out of 5 stars')
+[2024-08-20T04:46:22.368+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.379+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.386+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('The Enterprise Data Catalog: Improve Data Discovery, Ensure Data Governance, and Enable Innovation', 'Ole Olesen-Bagneux', '31.', '4.5 out of 5 stars')
+[2024-08-20T04:46:22.388+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.401+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.410+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Databricks', 'Paperback', '25.', '3.4 out of 5 stars')
+[2024-08-20T04:46:22.412+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.424+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.430+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Ace the Data Science Interview: 201 Real Interview Questions Asked By FAANG, Tech Startups, & Wall Street', 'Nick Singh', '42.', '4.5 out of 5 stars')
+[2024-08-20T04:46:22.431+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.445+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.450+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Modern Data Engineering with Apache Spark: A Hands-On Guide for Building Mission-Critical Streaming Applications', 'Scott Haines', '30.', '4.1 out of 5 stars')
+[2024-08-20T04:46:22.452+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.463+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.468+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Storytelling with Data: A Data Visualization Guide for Business Professionals', 'Cole Nussbaumer Knaflic', '27.', '4.6 out of 5 stars')
+[2024-08-20T04:46:22.473+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.484+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.489+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('97 Things Every Data Engineer Should Know: Collective Wisdom from the Experts', 'Audible Audiobook', '0.', '4.1 out of 5 stars')
+[2024-08-20T04:46:22.493+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.507+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.511+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Data Quality Fundamentals: A Practitioner's Guide to Building Trustworthy Data Pipelines", 'Paperback', '45.', '4.1 out of 5 stars')
+[2024-08-20T04:46:22.514+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.529+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.534+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Fundamentals of Data Analytics: Learn Essential Skills, Embrace the Future, and Catapult Your Career in the Data-Driven World—A Comprehensive Guide to Data Literacy for Beginners', 'Russell Dawson', '16.', '4.8 out of 5 stars')
+[2024-08-20T04:46:22.537+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.550+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.555+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Google Cloud Platform: A practical guide to operationalizing scalable data analytics systems on GCP', 'Adi Wijaya', '41.', '4.7 out of 5 stars')
+[2024-08-20T04:46:22.559+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.570+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.576+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Prompt Engineering for Generative AI: Future-Proof Inputs for Reliable AI Outputs', 'James Phoenix', '57.', '4.4 out of 5 stars')
+[2024-08-20T04:46:22.579+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.596+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.600+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Python Programming and SQL: 5 books in 1 - The #1 Coding Course from Beginner to Advanced. Learn it Well & Fast (2024) (Computer Programming)', 'Paperback', '32.', '4.3 out of 5 stars')
+[2024-08-20T04:46:22.602+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.613+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.618+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Analytics Engineering with SQL and dbt: Building Meaningful Data Models at Scale', 'Rui Pedro Machado', '41.', '3.8 out of 5 stars')
+[2024-08-20T04:46:22.620+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.631+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.635+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Observability for Data Engineering: Proactive strategies for ensuring data accuracy and addressing broken data pipelines', 'Michele Pinto', '18.', '3.7 out of 5 stars')
+[2024-08-20T04:46:22.637+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.647+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.652+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Ultimate Data Engineering with Databricks: Develop Scalable Data Pipelines Using Data Engineering's Core Tenets Such as Delta Tables, Ingestion, ... Security, and Scalability (English Edition)", 'Mayank Malhotra', '37.', '3.8 out of 5 stars')
+[2024-08-20T04:46:22.654+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.663+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.667+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('The Data Warehouse Toolkit: The Definitive Guide to Dimensional Modeling', 'Paperback', '47.', '4.7 out of 5 stars')
+[2024-08-20T04:46:22.669+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.678+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.684+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering 101', 'Kindle', '0.', '5.0 out of 5 stars')
+[2024-08-20T04:46:22.686+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.696+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.699+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Concepts of Generative AI and Data Engineering: Vital Concepts in Data Engineering and the World of Generative AI', 'Kindle', '29.', '5.0 out of 5 stars')
+[2024-08-20T04:46:22.701+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.710+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.714+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Official Google Cloud Certified Professional Data Engineer Study Guide', 'Dan Sullivan', '33.', '4.5 out of 5 stars')
+[2024-08-20T04:46:22.716+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.725+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.729+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Privacy: A runbook for engineers', 'Nishant Bhajaria', '32.', '4.8 out of 5 stars')
+[2024-08-20T04:46:22.731+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.740+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.744+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Analytics, Data Visualization & Communicating Data: 3 books in 1: Learn the Processes of Data Analytics and Data Science, Create Engaging Data Visualizations, and Present Data Effectively', 'Audible Audiobook', '0.', '4.5 out of 5 stars')
+[2024-08-20T04:46:22.746+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.755+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.759+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering and Data Science for Babies: Activity Workbook Part 1', 'Paperback', '9.', '4.1 out of 5 stars')
+[2024-08-20T04:46:22.761+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.769+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.774+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Fundamentals of Data Engineering: Efficiency, Insight, Impact: Transforming Data into Value through Expert Engineering Practices', 'Joseph Achakji', '0.', '4.6 out of 5 stars')
+[2024-08-20T04:46:22.776+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.784+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.789+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Learning Spark: Lightning-Fast Data Analytics', 'Jules S. Damji', '43.', '4.7 out of 5 stars')
+[2024-08-20T04:46:22.791+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.800+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.806+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("SQL QuickStart Guide: The Simplified Beginner's Guide to Managing, Analyzing, and Manipulating Data With SQL (Coding & Programming - QuickStart Guides)", 'Paperback', '18.', '4.6 out of 5 stars')
+[2024-08-20T04:46:22.807+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.816+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.821+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Electrical engineering without prior knowledge: Understand the basics within 7 days (Become an Engineer Without Prior Knowledge)', 'Paperback', '17.', '4.4 out of 5 stars')
+[2024-08-20T04:46:22.823+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.831+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.835+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Azure Data Engineering Cookbook - Second Edition: Get well versed in various data engineering techniques in Azure using this recipe-based guide', 'Nagaraj Venkatesan', '51.', '3.5 out of 5 stars')
+[2024-08-20T04:46:22.837+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.846+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.850+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Systems Engineering Demystified - Second Edition: Apply modern, model-based systems engineering techniques to build complex systems', 'Jon Holt', '45.', '4.7 out of 5 stars')
+[2024-08-20T04:46:22.852+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.861+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.865+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Salesforce CRM Administration Handbook: A comprehensive guide to administering, configuring, and customizing Salesforce CRM', 'Krzysztof Nowacki', '35.', '5.0 out of 5 stars')
+[2024-08-20T04:46:22.866+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.875+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.880+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Python Feature Engineering Cookbook: Over 70 recipes for creating, engineering, and transforming features to build machine learning models, 2nd Edition', 'Soledad Galli', '44.', '4.4 out of 5 stars')
+[2024-08-20T04:46:22.882+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.894+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.898+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Machine Learning Engineering with Python - Second Edition: Manage the lifecycle of machine learning models using MLOps with practical examples', 'Andrew McMahon', '32.', '4.7 out of 5 stars')
+[2024-08-20T04:46:22.900+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.910+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.914+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Database Internals: A Deep Dive into How Distributed Data Systems Work', 'Alex Petrov', '36.', '4.6 out of 5 stars')
+[2024-08-20T04:46:22.915+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.925+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.929+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Applied Machine Learning and AI for Engineers: Solve Business Problems That Can't Be Solved Algorithmically", 'Jeff Prosise', '55.', '4.5 out of 5 stars')
+[2024-08-20T04:46:22.931+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.939+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.944+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures', 'Claus Wilke', '49.', '4.6 out of 5 stars')
+[2024-08-20T04:46:22.946+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.955+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.958+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Data: Principles To Practice - Volume 1 'Foundations': Essential Foundations: Key Concepts behind Data Architecture, Engineering and Analysis for Professionals", 'Alex Holloway', '0.', '4.7 out of 5 stars')
+[2024-08-20T04:46:22.960+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.968+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.973+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('How Data Happened: A History from the Age of Reason to the Age of Algorithms', 'Chris Wiggins', '16.', '4.2 out of 5 stars')
+[2024-08-20T04:46:22.975+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.983+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:22.988+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Science (The MIT Press Essential Knowledge series)', 'Paperback', '10.', '4.4 out of 5 stars')
+[2024-08-20T04:46:22.990+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:22.999+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.003+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks', 'Jonathan Schwabish', '26.', '4.5 out of 5 stars')
+[2024-08-20T04:46:23.005+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.013+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.017+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Mastering the Data Paradox: Key to Winning in the AI Age', 'Nitin Seth', '18.', '4.8 out of 5 stars')
+[2024-08-20T04:46:23.019+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.028+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.032+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("System Design Interview – An insider's guide", 'Alex Xu', '37.', '4.6 out of 5 stars')
+[2024-08-20T04:46:23.034+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.043+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.047+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Science on AWS: Implementing End-to-End, Continuous AI and Machine Learning Pipelines', 'Chris Fregly', '11.', '4.5 out of 5 stars')
+[2024-08-20T04:46:23.048+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.057+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.061+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('A Common-Sense Guide to Data Structures and Algorithms, Second Edition: Level Up Your Core Programming Skills', 'Jay Wengrow', '39.', '4.7 out of 5 stars')
+[2024-08-20T04:46:23.062+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.071+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.076+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering Fundamentals for Beginners: Mastering the Art of Building, Managing, and Scaling Data Systems', 'Paperback', '14.', '5.0 out of 5 stars')
+[2024-08-20T04:46:23.077+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.085+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.090+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Feature Engineering for Machine Learning: Principles and Techniques for Data Scientists', 'Alice Zheng', '41.', '4.4 out of 5 stars')
+[2024-08-20T04:46:23.091+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.100+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.105+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Quality Engineering in Financial Services: Applying Manufacturing Techniques to Data', 'Brian Buzzelli', '30.', '4.4 out of 5 stars')
+[2024-08-20T04:46:23.106+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.115+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.119+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('The Data Governance Guidebook and Playbook: By a Practitioner for Practitioners', 'Paperback', '25.', '4.3 out of 5 stars')
+[2024-08-20T04:46:23.121+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.131+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.135+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Engineers Survival Guide: Advice, tactics, and tricks After a decade of working at Facebook, Snapchat, and Microsoft', 'Merih Taze', '29.', '4.4 out of 5 stars')
+[2024-08-20T04:46:23.137+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.146+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.150+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('SQL Data Analytics Made Easy: Your Step-by-Step Guide to Unlocking Data’s Hidden Secrets: Demystify complex concepts, and harness the power of data to drive intelligent decision-making effortlessly.', 'L.D. Knowings', '14.', '4.1 out of 5 stars')
+[2024-08-20T04:46:23.152+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.161+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.166+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('AWS Certified Data Analytics Study Guide: Specialty (DAS-C01) Exam', 'Asif Abbasi', '31.', '4.6 out of 5 stars')
+[2024-08-20T04:46:23.167+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.177+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.181+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Modeling and Simulation in Python: An Introduction for Scientists and Engineers', 'Allen B. Downey', '32.', '4.5 out of 5 stars')
+[2024-08-20T04:46:23.182+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.193+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.197+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('50 Algorithms Every Programmer Should Know - Second Edition: An unbeatable arsenal of algorithmic solutions for real-world problems', 'Imran Ahmad', '37.', '4.4 out of 5 stars')
+[2024-08-20T04:46:23.198+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.207+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.212+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Science: The Hard Parts: Techniques for Excelling at Data Science', 'Daniel Vaughan', '48.', '5.0 out of 5 stars')
+[2024-08-20T04:46:23.214+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.223+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.227+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Management at Scale: Modern Data Architecture with Data Mesh and Data Fabric', 'Piethein Strengholt', '47.', '4.5 out of 5 stars')
+[2024-08-20T04:46:23.229+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.238+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.243+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Architecting Data and Machine Learning Platforms: Enable Analytics and AI-Driven Innovation in the Cloud', 'Marco Tranquillin', '37.', '4.3 out of 5 stars')
+[2024-08-20T04:46:23.244+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.253+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.258+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data-Centric Machine Learning with Python: The ultimate guide to engineering and deploying high-quality models based on good data', 'Jonas Christensen', '49.', '4.6 out of 5 stars')
+[2024-08-20T04:46:23.259+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.269+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.273+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Ultimate Azure Data Engineering: Build Robust Data Engineering Systems on Azure with SQL, ETL, Data Modeling, and Power BI for Business Insights and Crack Azure Certifications (English Edition)', 'Ashish Agarwal', '39.', '5.0 out of 5 stars')
+[2024-08-20T04:46:23.275+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.285+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.291+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Building ETL Pipelines with Python: Create and deploy enterprise-ready ETL pipelines by employing modern methods', 'Brij Kishore Pandey', '17.', '4.2 out of 5 stars')
+[2024-08-20T04:46:23.293+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.302+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.308+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Hypothesis Testing: An Intuitive Guide for Making Data Driven Decisions', 'Jim Frost', '23.', '4.5 out of 5 stars')
+[2024-08-20T04:46:23.309+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.320+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.328+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('The Art of Doing Science and Engineering: Learning to Learn', 'Richard W. Hamming', '19.', '4.6 out of 5 stars')
+[2024-08-20T04:46:23.330+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.340+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.346+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Designing Cloud Data Platforms', 'Audible Audiobook', '0.', '4.7 out of 5 stars')
+[2024-08-20T04:46:23.348+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.364+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.377+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Practical Reverse Engineering: x86, x64, ARM, Windows Kernel, Reversing Tools, and Obfuscation', 'Bruce Dang', '34.', '4.6 out of 5 stars')
+[2024-08-20T04:46:23.379+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.393+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.398+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Mastering Databricks Lakehouse Platform: Perform Data Warehousing, Data Engineering, Machine Learning, DevOps, and BI into a Single Platform (English Edition)', 'Sagar Lad', '26.', '3.6 out of 5 stars')
+[2024-08-20T04:46:23.400+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.413+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.420+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Practical Fraud Prevention: Fraud and AML Analytics for Fintech and eCommerce, Using SQL and Python', 'Gilit Saporta', '47.', '4.4 out of 5 stars')
+[2024-08-20T04:46:23.422+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.433+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.440+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Observability Engineering: Achieving Production Excellence', 'Charity Majors', '34.', '4.3 out of 5 stars')
+[2024-08-20T04:46:23.442+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.454+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.460+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Structures and Algorithms: 100 Interview Questions (Advanced Topics in Programming Book 2)', 'Kindle', '9.', '5.0 out of 5 stars')
+[2024-08-20T04:46:23.462+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.476+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.483+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Grokking Algorithms', 'Audible Audiobook', '0.', '4.6 out of 5 stars')
+[2024-08-20T04:46:23.485+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.498+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.502+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Python Data Engineering Resources: Boost Your Career With This Python Handbook; Prepare For Python Interview; Python Programming Cookbook For Beginners and Experienced; Python Data Analysis and More', 'Vajo Lukic', '9.', '4.8 out of 5 stars')
+[2024-08-20T04:46:23.506+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.518+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.525+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Storytelling with Data: Let's Practice!", 'Cole Nussbaumer Knaflic', '28.', '4.7 out of 5 stars')
+[2024-08-20T04:46:23.527+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.538+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.545+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Restricted Data: The History of Nuclear Secrecy in the United States', 'Alex Wellerstein', '2.', '4.7 out of 5 stars')
+[2024-08-20T04:46:23.546+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.557+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.564+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("The Baofeng Radio Guerrilla's Bible 16 Books in 1: The Guerrilla's Comprehensive Manual: Mastering Your Baofeng Radio for Every Situation - Essential Tactics for Emergencies,Disasters,Covert Oper...", 'Paperback', '34.', '4.5 out of 5 stars')
+[2024-08-20T04:46:23.567+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.580+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.586+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Learning Tableau 2022 - Fifth Edition: Create effective data visualizations, build interactive visual analytics, and improve your data storytelling capabilities', 'Joshua N Milligan', '57.', '4.5 out of 5 stars')
+[2024-08-20T04:46:23.588+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.599+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.605+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('The Data Model Resource Book, Vol. 1: A Library of Universal Data Models for All Enterprises', 'Len Silverston', '63.', '4.3 out of 5 stars')
+[2024-08-20T04:46:23.608+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.618+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.625+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Grab: The New Colonialism of Big Tech and How to Fight Back', 'Ulises A. Mejias', '21.', '5.0 out of 5 stars')
+[2024-08-20T04:46:23.627+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.639+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.645+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('The Data Model Resource Book, Vol. 2: A Library of Data Models for Specific Industries', 'Len Silverston', '68.', '4.1 out of 5 stars')
+[2024-08-20T04:46:23.647+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.660+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:46:23.666+0000] {sql.py:509} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Simplifying Data Engineering and Analytics with Delta: Create analytics-ready data that fuels artificial intelligence and business intelligence', 'Anindita Mahapatra', '28.', '4.3 out of 5 stars')
+[2024-08-20T04:46:23.668+0000] {sql.py:518} INFO - Rows affected: 1
+[2024-08-20T04:46:23.671+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-08-20T04:46:23.687+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-08-20T04:46:23.688+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=fetch_and_store_DE_books, task_id=insert_book_data, run_id=scheduled__2024-08-05T00:00:00+00:00, execution_date=20240805T000000, start_date=20240820T044621, end_date=20240820T044623
+[2024-08-20T04:46:23.706+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-08-20T04:46:23.707+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-08-20T04:46:23.708+0000] {logging_mixin.py:190} INFO - Dag name:fetch_and_store_DE_books queued_at:2024-08-20 04:46:08.630477+00:00
+[2024-08-20T04:46:23.709+0000] {logging_mixin.py:190} INFO - Task hostname:668944ed7238 operator:PythonOperator
+[2024-08-20T04:46:23.732+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-08-20T04:46:23.760+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-08-20T04:46:23.762+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

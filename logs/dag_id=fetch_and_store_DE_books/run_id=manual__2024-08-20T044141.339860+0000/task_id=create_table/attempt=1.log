@@ -1,0 +1,46 @@
+[2024-08-20T04:47:57.156+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-08-20T04:47:57.212+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_and_store_DE_books.create_table manual__2024-08-20T04:41:41.339860+00:00 [queued]>
+[2024-08-20T04:47:57.287+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_and_store_DE_books.create_table manual__2024-08-20T04:41:41.339860+00:00 [queued]>
+[2024-08-20T04:47:57.290+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2024-08-20T04:47:57.367+0000] {taskinstance.py:2879} INFO - Executing <Task(PostgresOperator): create_table> on 2024-08-20 04:41:41.339860+00:00
+[2024-08-20T04:47:57.411+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1439) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-08-20T04:47:57.420+0000] {standard_task_runner.py:72} INFO - Started process 1480 to run task
+[2024-08-20T04:47:57.416+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'fetch_and_store_DE_books', 'create_table', 'manual__2024-08-20T04:41:41.339860+00:00', '--job-id', '171', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpbupc_nsm']
+[2024-08-20T04:47:57.440+0000] {standard_task_runner.py:105} INFO - Job 171: Subtask create_table
+[2024-08-20T04:47:57.696+0000] {task_command.py:467} INFO - Running <TaskInstance: fetch_and_store_DE_books.create_table manual__2024-08-20T04:41:41.339860+00:00 [running]> on host 668944ed7238
+[2024-08-20T04:47:58.148+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_and_store_DE_books' AIRFLOW_CTX_TASK_ID='create_table' AIRFLOW_CTX_EXECUTION_DATE='2024-08-20T04:41:41.339860+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-08-20T04:41:41.339860+00:00'
+[2024-08-20T04:47:58.162+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-08-20T04:47:58.176+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-08-20T04:47:58.178+0000] {logging_mixin.py:190} INFO - Current task name:create_table state:running start_date:2024-08-20 04:47:57.226559+00:00
+[2024-08-20T04:47:58.200+0000] {logging_mixin.py:190} INFO - Dag name:fetch_and_store_DE_books and current dag run status:running
+[2024-08-20T04:47:58.201+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-08-20T04:47:58.202+0000] {sql.py:282} INFO - Executing: 
+    CREATE TABLE IF NOT EXISTS books (
+        id SERIAL PRIMARY KEY,
+        title TEXT NOT NULL,
+        authors TEXT,
+        price TEXT,
+        rating TEXT
+    );
+    
+[2024-08-20T04:47:58.221+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:47:58.261+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-08-20T04:47:58.291+0000] {sql.py:509} INFO - Running statement: 
+    CREATE TABLE IF NOT EXISTS books (
+        id SERIAL PRIMARY KEY,
+        title TEXT NOT NULL,
+        authors TEXT,
+        price TEXT,
+        rating TEXT
+    );
+    , parameters: None
+[2024-08-20T04:47:58.369+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-08-20T04:47:58.388+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=fetch_and_store_DE_books, task_id=create_table, run_id=manual__2024-08-20T04:41:41.339860+00:00, execution_date=20240820T044141, start_date=20240820T044757, end_date=20240820T044758
+[2024-08-20T04:47:58.466+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-08-20T04:47:58.475+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-08-20T04:47:58.476+0000] {logging_mixin.py:190} INFO - Dag name:fetch_and_store_DE_books queued_at:2024-08-20 04:41:41.436218+00:00
+[2024-08-20T04:47:58.477+0000] {logging_mixin.py:190} INFO - Task hostname:668944ed7238 operator:PostgresOperator
+[2024-08-20T04:47:58.589+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2024-08-20T04:47:58.665+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
